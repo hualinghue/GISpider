@@ -1,3 +1,8 @@
+import os,sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
 from lxml import etree
 from core import GetImgAddress
 from urllib.parse import urljoin
@@ -104,7 +109,6 @@ class TPSpider(GetImgAddress.BaseSpider):
             tree = etree.HTML(response.text)
             url = tree.xpath('//div[@class="picsbox picsboxcenter"]//img/@src')[0]
             tp_id = self.storage(url=url)
-            print(tp_id)
 
 
 
