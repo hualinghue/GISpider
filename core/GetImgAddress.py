@@ -65,7 +65,7 @@ class DriveEngine(object):
         pass
 
 class BaseSpider(object):
-    def storage(self,url):
+    def storage(self,url,label):
         '下载并保存与本地和mongo'
         down = requests.get(url).content
         md5_str = self.md5_encryption(down)
@@ -76,7 +76,7 @@ class BaseSpider(object):
         print(img_path, '下载完成')
         data = {
             'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-            'type' : 5,
+            'type' : label,
             'status':1,
             'md5':md5_str,
             'size':img.size,
@@ -104,6 +104,7 @@ class BaseSpider(object):
     def deposit_mongo(self,data):
         mongo_obj = self.conne_mongo()
         table_obj = mongo_obj['tp_image']
-        return table_obj.insert(data)
+        if not table_obj.find_one({'md5':data["md5"]}):
+            return table_obj.insert(data)
 
 
