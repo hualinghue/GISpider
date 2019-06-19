@@ -30,7 +30,7 @@ class WeiYiSpider(GetImgAddress.BaseSpider):
             for a in a_list:
                 file_name = response.url.split('/')[-1].split('.')[0]   # 截取name
                 url = a.xpath('.//img/@src')[0]
-                self.storage(url=url,file_name=file_name,path=self.name)
+                img_size=self.storage(url=url,file_name=file_name,path=self.name)
 class BianSpider(GetImgAddress.BaseSpider):
     name  = "彼岸桌面"
     model = 'static_get'
@@ -60,7 +60,7 @@ class BianSpider(GetImgAddress.BaseSpider):
                 file_name = file_name.encode('iso-8859-1').decode('gbk')
             except UnicodeEncodeError as e:
                 pass
-            self.storage(url=url, file_name=file_name, path=self.name)
+            img_size = self.storage(url=url, file_name=file_name, path=self.name)
 class QibaSpider(GetImgAddress.BaseSpider):
     # json获取数据
     def __init__(self):
@@ -103,8 +103,8 @@ class TPSpider(GetImgAddress.BaseSpider):
         def parse_item(self, response):
             tree = etree.HTML(response.text)
             url = tree.xpath('//div[@class="picsbox picsboxcenter"]//img/@src')[0]
-            file_name = response.url.split('/')[-1].split('.')[0]
-            self.storage(url=url, file_name=file_name, path=self.name)
+            tp_id = self.storage(url=url)
+            print(tp_id)
 
 
 
