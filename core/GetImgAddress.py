@@ -67,21 +67,22 @@ class DriveEngine(object):
 class BaseSpider(object):
     def storage(self,url,label):
         '下载并保存与本地和mongo'
+        self.mongo_obj = self.conne_mongo()
+        table_obj = self.mongo_obj['tp_image']
         down = requests.get(url).content
         md5_str = self.md5_encryption(down)
-        img_path = Setting.SAVE_PATH+md5_str+'.jpg'
-        with open(img_path,'wb') as fp :
-            fp.write(down)
-        img = Image.open(img_path)
-        print(img_path, '下载完成')
-        data = {
-            'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-            'type' : label,
-            'status':1,
-            'md5':md5_str,
-            'size':img.size,
-        }
-        return self.deposit_mongo(data)
+        img_path = Setting.SAVE_PATH + md5_str + '.jpg'
+        if not table_obj.find_one({'md5':md5_str}): #去重
+            self.deposit_loclo(path=img_path,data=down)  #存入本地
+            data = {
+                'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+                'type' : label,
+                'status':1,
+                'md5':md5_str,
+                'size':Image.open(img_path).size,   #图片尺寸
+            }
+            print(img_path, '下载完成')
+            return self.deposit_mongo(data)  #存入mongo
     def text_analysis(self,text):
         try:  # 处理中文乱码
             text = text.encode('iso-8859-1').decode('gbk')
@@ -102,9 +103,9 @@ class BaseSpider(object):
         hl.update(down)
         return hl.hexdigest()
     def deposit_mongo(self,data):
-        mongo_obj = self.conne_mongo()
-        table_obj = mongo_obj['tp_image']
-        if not table_obj.find_one({'md5':data["md5"]}):
-            return table_obj.insert(data)
-
+        table_obj =  self.mongo_obj['tp_image']
+        return table_obj.insert(data)
+    def deposit_loclo(self,path,data):
+        with open(path, 'wb') as fp:
+            fp.write(data)
 
