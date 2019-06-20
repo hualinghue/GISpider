@@ -21,13 +21,14 @@ class DriveEngine(object):
         self.url_list = set()
         self.old_url = set(spider_obj.exclude_urls)
     def run(self):
-        for url in self.spider_obj.start_urls:
+        for url in self.spider_obj.start_urls: #循环前台连接
             self.abyss(url)
     def abyss(self,url):
         "重复获取下一页url和html源码进行处理"
         self.old_url.add(url)  #已执行的url
         response_obj = self.func(url)   #获取源码
         response_obj.url = url
+        print(self.spider_obj)
         self.spider_obj.parse_item(response_obj)     #调用解析函数
         self.get_page_url(response_obj.text,url)     #调用url提取器
         #判断url集合中是否还有未执行的url

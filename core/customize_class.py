@@ -11,6 +11,7 @@ import json
 class WeiYiSpider(GetImgAddress.BaseSpider):
     name  = "唯一桌面"
     model = 'static_get'
+    display = True
     start_urls = ['http://www.mmonly.cc/mmtp/']
     exclude_urls = []
     link = r'list_9_\d+.html'  #分页正则
@@ -18,13 +19,11 @@ class WeiYiSpider(GetImgAddress.BaseSpider):
         tree = etree.HTML(response.text)
         a_list = tree.xpath('//div[@id="infinite_scroll"]/div')
         for a in a_list:
-            file_name = self.text_analysis(a.xpath('.//div[@class="ABox"]/a/img/@alt')[0])
             url = a.xpath('.//div[@class="ABox"]/a/@href')
-            next_obj =self.NextBianSpider(url,"%s/%s"%(self.name,file_name))
+            next_obj =self.NextBianSpider(url)
             GetImgAddress.DriveEngine(next_obj).run()
     class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
-        def __init__(self,url,name):
-            self.name = name
+        def __init__(self,url,):
             self.model = 'static_get'
             self.start_urls = url
             self.exclude_urls = []
@@ -37,11 +36,12 @@ class WeiYiSpider(GetImgAddress.BaseSpider):
                 img_size=self.storage(url=url,label=5)
 class BianSpider(GetImgAddress.BaseSpider):
     name  = "彼岸桌面"
+    display = False
     model = 'static_get'
     start_urls = ['http://www.netbian.com/meinv/']
     exclude_urls = []
     link = r'/meinv/index_\d+.htm'  #分页正则
-    def parse_item(self, response):    #解析数据函数
+    def parse_item(self,response):    #解析数据函数
         print(response.url)
         tree = etree.HTML(response.text)
         a_list = tree.xpath('//div[@class="list"]/ul/li/a')
@@ -74,6 +74,7 @@ class QibaSpider(GetImgAddress.BaseSpider):
         self.start_urls = []
         self.link = r''  #分页正则
         self.init_url()
+    display = False
     def init_url(self,):
         # 批量生成请求连接
         for i in range(1,9):
@@ -85,6 +86,7 @@ class QibaSpider(GetImgAddress.BaseSpider):
 class TPSpider(GetImgAddress.BaseSpider):
     name  = "7160图片大全"
     model = 'static_get'
+    display = False
     start_urls = ['https://www.7160.com/xiaohua/']
     exclude_urls = []
     link = r'list_6_\d+.html'  #分页正则
@@ -110,7 +112,7 @@ class TPSpider(GetImgAddress.BaseSpider):
             tp_id = self.storage(url=url,label=6)
 
 
-
-aa = TPSpider()
-bb = GetImgAddress.DriveEngine(aa)
-bb.run()
+#
+# aa = TPSpider()
+# bb = GetImgAddress.DriveEngine(aa)
+# bb.run()
