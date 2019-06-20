@@ -58,7 +58,7 @@ class BianSpider(GetImgAddress.BaseSpider):
             self.link = r''  # 分页正则
         def parse_item(self, response):
             tree = etree.HTML(response.text)
-            url = tree.xpath('//*[@id="main"]/div[2]/div/p/a/img/@src')[0]
+            url = tree.xpath('//div[@class="pic"]/p/a/img/@src')[0]
             file_name = tree.xpath('//*[@id="main"]/div[2]/div/p/a/img/@alt')[0]
             try:  #处理中文乱码
                 file_name = file_name.encode('iso-8859-1').decode('gbk')
