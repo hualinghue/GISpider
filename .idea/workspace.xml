@@ -57,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/customize_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="59" column="23" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="24" />
+            <state relative-caret-position="638">
+              <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
               <folding>
                 <element signature="e#2777#3397#0" />
                 <element signature="e#3444#4569#0" />
@@ -303,12 +303,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560571748747</updated>
-      <workItem from="1560985646067" duration="5086000" />
+      <workItem from="1560985646067" duration="5401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5086000" />
+    <option name="totallyTimeSpent" value="5401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,8 +415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/customize_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="59" column="23" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="24" />
+        <state relative-caret-position="638">
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
           <folding>
             <element signature="e#2777#3397#0" />
             <element signature="e#3444#4569#0" />

@@ -36,7 +36,7 @@ class WeiYiSpider(GetImgAddress.BaseSpider):
                 img_size=self.storage(url=url,label=5)
 class BianSpider(GetImgAddress.BaseSpider):
     name  = "彼岸桌面"
-    display = True
+    display = False
     model = 'static_get'
     start_urls = ['http://www.netbian.com/meinv/']
     exclude_urls = []
@@ -84,7 +84,7 @@ class QibaSpider(GetImgAddress.BaseSpider):
 class TPSpider(GetImgAddress.BaseSpider):
     name  = "7160图片大全"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.7160.com/xiaohua/']
     exclude_urls = []
     link = r'list_6_\d+.html'  #分页正则
