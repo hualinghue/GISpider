@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378cb38e-9382-4981-9812-d21afba1035c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/customize_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/customize_class.py" afterDir="false" />
-    </list>
+    <list default="true" id="378cb38e-9382-4981-9812-d21afba1035c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/customize_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+            <state relative-caret-position="542">
+              <caret line="59" column="23" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="24" />
               <folding>
                 <element signature="e#2777#3397#0" />
                 <element signature="e#3444#4569#0" />
@@ -305,12 +303,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560571748747</updated>
-      <workItem from="1560985646067" duration="4902000" />
+      <workItem from="1560985646067" duration="5086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4902000" />
+    <option name="totallyTimeSpent" value="5086000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,8 +415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/customize_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+        <state relative-caret-position="542">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="24" />
           <folding>
             <element signature="e#2777#3397#0" />
             <element signature="e#3444#4569#0" />

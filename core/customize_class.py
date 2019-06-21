@@ -58,7 +58,7 @@ class BianSpider(GetImgAddress.BaseSpider):
             self.link = r''  # 分页正则
         def parse_item(self, response):
             tree = etree.HTML(response.text)
-            url = tree.xpath('//div[@class="pic"]/p/a/img/@src')
+            url = tree.xpath('//div[@class="pic"]//img/@src')
             if not url:
                 print(url,self.start_urls)
                 raise ValueError
