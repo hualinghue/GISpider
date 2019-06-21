@@ -60,7 +60,7 @@ class BianSpider(GetImgAddress.BaseSpider):
             tree = etree.HTML(response.text)
             url = tree.xpath('//div[@class="pic"]/p/a/img/@src')
             if not url:
-                print(url)
+                print(url,self.start_urls)
                 raise ValueError
             img_size = self.storage(url=url[0],label=5)
 class QibaSpider(GetImgAddress.BaseSpider):
