@@ -81,7 +81,7 @@ class BaseSpider(object):
                 'md5':md5_str,
                 'size':Image.open(img_path).size,   #图片尺寸
             }
-            print(img_path, '下载完成')
+            print(url, '下载完成')
             return self.deposit_mongo(data)  #存入mongo
     def text_analysis(self,text):
         try:  # 处理中文乱码
@@ -94,7 +94,6 @@ class BaseSpider(object):
         db = client[Setting.DB_NAME]
         try:
             db.authenticate(Setting.DB_USER_NAME, Setting.DB_PASSWORD)
-            print("连接mongo成功")
             return db
         except Exception as e:
             print('连接mongo失败', e)
