@@ -11,7 +11,7 @@ import json
 class WeiYiSpider(GetImgAddress.BaseSpider):
     name  = "唯一桌面"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['http://www.mmonly.cc/mmtp/']
     exclude_urls = []
     link = r'list_9_\d+.html'  #分页正则
@@ -84,7 +84,7 @@ class QibaSpider(GetImgAddress.BaseSpider):
 class TPSpider(GetImgAddress.BaseSpider):
     name  = "7160图片大全"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.7160.com/xiaohua/']
     exclude_urls = []
     link = r'list_6_\d+.html'  #分页正则
@@ -108,9 +108,89 @@ class TPSpider(GetImgAddress.BaseSpider):
             tree = etree.HTML(response.text)
             url = tree.xpath('//div[@class="picsbox picsboxcenter"]//img/@src')[0]
             tp_id = self.storage(url=url,label=6)
-
+class MTSSpider(GetImgAddress.BaseSpider):
+    name  = "美图录_性感"
+    model = 'static_get'
+    display = True
+    start_urls = ['https://www.meitulu.com/t/xinggan/']
+    exclude_urls = []
+    link = r'https://www.meitulu.com/t/xinggan/\d+.html'  #分页正则
+    def parse_item(self, response):    #解析数据函数
+        print(response.url)
+        tree = etree.HTML(response.text)
+        a_list = tree.xpath("//ul[@class='img']/li")
+        for a in a_list:
+            url = a.xpath('./a/@href')[0]
+            next_obj =self.NextBianSpider([urljoin(response.url,url)],self.name)
+            GetImgAddress.DriveEngine(next_obj).run()
+    class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
+        def __init__(self,url,name):
+            self.name = name
+            self.model = 'static_get'
+            self.start_urls = url
+            self.exclude_urls = []
+            self.link = r'/item/\d+_\d+.html'  # 分页正则
+        def parse_item(self, response):
+            tree = etree.HTML(response.text)
+            url_list = tree.xpath('//div[@class="content"]/center/img/@src')
+            for url in url_list:
+                tp_id = self.storage(url=url,label=3)
+class MTKSpider(GetImgAddress.BaseSpider):
+    name  = "美图录_可爱"
+    model = 'static_get'
+    display = True
+    start_urls = ['https://www.meitulu.com/t/keai/']
+    exclude_urls = []
+    link = r'https://www.meitulu.com/t/keai/\d+.html'  #分页正则
+    def parse_item(self, response):    #解析数据函数
+        print(response.url)
+        tree = etree.HTML(response.text)
+        a_list = tree.xpath("//ul[@class='img']/li")
+        for a in a_list:
+            url = a.xpath('./a/@href')[0]
+            next_obj =self.NextBianSpider([urljoin(response.url,url)],self.name)
+            GetImgAddress.DriveEngine(next_obj).run()
+    class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
+        def __init__(self,url,name):
+            self.name = name
+            self.model = 'static_get'
+            self.start_urls = url
+            self.exclude_urls = []
+            self.link = r'/item/\d+_\d+.html'  # 分页正则
+        def parse_item(self, response):
+            tree = etree.HTML(response.text)
+            url_list = tree.xpath('//div[@class="content"]/center/img/@src')
+            for url in url_list:
+                tp_id = self.storage(url=url,label=1)
+class MTQSpider(GetImgAddress.BaseSpider):
+    name  = "美图录_清纯"
+    model = 'static_get'
+    display = True
+    start_urls = ['https://www.meitulu.com/t/qingchun/']
+    exclude_urls = []
+    link = r'https://www.meitulu.com/t/qingchun/\d+.html'  #分页正则
+    def parse_item(self, response):    #解析数据函数
+        print(response.url)
+        tree = etree.HTML(response.text)
+        a_list = tree.xpath("//ul[@class='img']/li")
+        for a in a_list:
+            url = a.xpath('./a/@href')[0]
+            next_obj =self.NextBianSpider([urljoin(response.url,url)],self.name)
+            GetImgAddress.DriveEngine(next_obj).run()
+    class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
+        def __init__(self,url,name):
+            self.name = name
+            self.model = 'static_get'
+            self.start_urls = url
+            self.exclude_urls = []
+            self.link = r'/item/\d+_\d+.html'  # 分页正则
+        def parse_item(self, response):
+            tree = etree.HTML(response.text)
+            url_list = tree.xpath('//div[@class="content"]/center/img/@src')
+            for url in url_list:
+                tp_id = self.storage(url=url,label=2)
 
 #
-# aa = TPSpider()
-# bb = GetImgAddress.DriveEngine(aa)
-# bb.run()
+aa = MTKSpider()
+bb = GetImgAddress.DriveEngine(aa)
+bb.run()
