@@ -74,12 +74,18 @@ class BaseSpider(object):
         img_path = Setting.SAVE_PATH + md5_str + '.jpg'
         if not table_obj.find_one({'md5':md5_str}): #去重
             self.deposit_loclo(path=img_path,data=down)  #存入本地
+            try:
+                size = Image.open(img_path).size
+            except OSError as e:
+                print('img_path:',img_path)
+                print('url:',url)
+                raise OSError
             data = {
                 'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
                 'type' : label,
                 'status':1,
                 'md5':md5_str,
-                'size':Image.open(img_path).size,   #图片尺寸
+                'size':size   #图片尺寸
             }
             print(url, '下载完成')
             return self.deposit_mongo(data)  #存入mongo
