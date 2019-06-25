@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="378cb38e-9382-4981-9812-d21afba1035c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/core/text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/GetImgAddress.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/GetImgAddress.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/customize_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/customize_class.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +14,11 @@
     <SUITE FILE_PATH="coverage/Reptile_img$text.coverage" NAME="text Coverage Results" MODIFIED="1560751677471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/GISpider$spider_climb.coverage" NAME="spider_climb Coverage Results" MODIFIED="1560987804025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
     <SUITE FILE_PATH="coverage/Reptile_img$GetImgAddress.coverage" NAME="GetImgAddress Coverage Results" MODIFIED="1560942437471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/GISpider$text__1_.coverage" NAME="text (1) Coverage Results" MODIFIED="1561435469505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/GISpider$text__1_.coverage" NAME="text (1) Coverage Results" MODIFIED="1561440131201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/Reptile_img$Setting.coverage" NAME="Setting Coverage Results" MODIFIED="1560685586243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/conf" />
     <SUITE FILE_PATH="coverage/Reptile_img$text__1_.coverage" NAME="text (1) Coverage Results" MODIFIED="1560684534429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cores" />
     <SUITE FILE_PATH="coverage/Reptile_img$customize_class.coverage" NAME="customize_class Coverage Results" MODIFIED="1560942441431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/GISpider$customize_class.coverage" NAME="customize_class Coverage Results" MODIFIED="1561385954039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/GISpider$customize_class.coverage" NAME="customize_class Coverage Results" MODIFIED="1561440404291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
@@ -37,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            <state relative-caret-position="372">
+              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <element signature="e#399#613#0" />
@@ -50,37 +47,31 @@
                 <element signature="e#1879#1912#0" />
                 <element signature="e#1958#2403#0" />
                 <element signature="e#2450#2454#0" />
+                <element signature="e#2531#3423#0" />
                 <element signature="e#3285#3435#0" />
                 <element signature="e#3471#3772#0" />
                 <element signature="e#3816#3888#0" />
                 <element signature="e#3931#4008#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/customize_class.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="137" column="34" selection-start-line="137" selection-start-column="34" selection-end-line="137" selection-end-column="34" />
-              <folding>
-                <element signature="e#262#1421#0" />
-                <element signature="e#1470#2728#0" />
-                <element signature="e#2777#3397#0" />
-                <element signature="e#3198#4342#0" />
-                <element signature="e#5547#6659#0" />
-                <element signature="e#6697#7801#0" />
+                <element signature="e#4056#4111#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/text.py">
+        <entry file="file://$PROJECT_DIR$/core/customize_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="56" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="57" />
+            <state relative-caret-position="552">
+              <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
+              <folding>
+                <element signature="e#262#1421#0" />
+                <element signature="e#1470#2728#0" />
+                <element signature="e#2777#3397#0" />
+                <element signature="e#3198#4342#0" />
+                <element signature="e#4384#5528#0" />
+                <element signature="e#5547#6659#0" />
+                <element signature="e#6697#7801#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,8 +111,8 @@
         <option value="$PROJECT_DIR$/conf/text.py" />
         <option value="$PROJECT_DIR$/bin/spider_climb.py" />
         <option value="$PROJECT_DIR$/conf/Setting.py" />
-        <option value="$PROJECT_DIR$/core/text.py" />
         <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
+        <option value="$PROJECT_DIR$/core/text.py" />
         <option value="$PROJECT_DIR$/core/customize_class.py" />
       </list>
     </option>
@@ -184,7 +175,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.text (1)">
+  <component name="RunManager" selected="Python.customize_class">
     <configuration name="GetImgAddress" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Reptile_img" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -304,8 +295,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.text (1)" />
         <item itemvalue="Python.customize_class" />
+        <item itemvalue="Python.text (1)" />
         <item itemvalue="Python.spider_climb" />
         <item itemvalue="Python.GetImgAddress" />
         <item itemvalue="Python.text" />
@@ -322,12 +313,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560571748747</updated>
-      <workItem from="1560985646067" duration="12897000" />
+      <workItem from="1560985646067" duration="13892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12897000" />
+    <option name="totallyTimeSpent" value="13892000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -400,6 +391,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/spider_climb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -407,13 +405,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/Setting.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        <state relative-caret-position="372">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <element signature="e#399#613#0" />
@@ -425,33 +420,32 @@
             <element signature="e#1879#1912#0" />
             <element signature="e#1958#2403#0" />
             <element signature="e#2450#2454#0" />
+            <element signature="e#2531#3423#0" />
             <element signature="e#3285#3435#0" />
             <element signature="e#3471#3772#0" />
             <element signature="e#3816#3888#0" />
             <element signature="e#3931#4008#0" />
+            <element signature="e#4056#4111#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conf/Setting.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/customize_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="137" column="34" selection-start-line="137" selection-start-column="34" selection-end-line="137" selection-end-column="34" />
+        <state relative-caret-position="552">
+          <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
           <folding>
             <element signature="e#262#1421#0" />
             <element signature="e#1470#2728#0" />
             <element signature="e#2777#3397#0" />
             <element signature="e#3198#4342#0" />
+            <element signature="e#4384#5528#0" />
             <element signature="e#5547#6659#0" />
             <element signature="e#6697#7801#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="56" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="57" />
         </state>
       </provider>
     </entry>
