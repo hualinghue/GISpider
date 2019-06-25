@@ -6,6 +6,7 @@ sys.path.append(BASE_DIR)
 from lxml import etree
 from core import GetImgAddress
 from urllib.parse import urljoin
+from conf import Setting
 import json
 
 class WeiYiSpider(GetImgAddress.BaseSpider):
@@ -133,8 +134,10 @@ class MTSSpider(GetImgAddress.BaseSpider):
         def parse_item(self, response):
             tree = etree.HTML(response.text)
             url_list = tree.xpath('//div[@class="content"]/center/img/@src')
+            headers = Setting.HEADERS
+            headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
-                tp_id = self.storage(url=url,label=3)
+                tp_id = self.storage(url=url,label=3,headers=headers)
 class MTKSpider(GetImgAddress.BaseSpider):
     name  = "美图录_可爱"
     model = 'static_get'
@@ -160,8 +163,10 @@ class MTKSpider(GetImgAddress.BaseSpider):
         def parse_item(self, response):
             tree = etree.HTML(response.text)
             url_list = tree.xpath('//div[@class="content"]/center/img/@src')
+            headers = Setting.HEADERS
+            headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
-                tp_id = self.storage(url=url,label=1)
+                tp_id = self.storage(url=url,label=1,headers=headers)
 class MTQSpider(GetImgAddress.BaseSpider):
     name  = "美图录_清纯"
     model = 'static_get'
@@ -187,10 +192,12 @@ class MTQSpider(GetImgAddress.BaseSpider):
         def parse_item(self, response):
             tree = etree.HTML(response.text)
             url_list = tree.xpath('//div[@class="content"]/center/img/@src')
+            headers = Setting.HEADERS
+            headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
-                tp_id = self.storage(url=url,label=2)
+                tp_id = self.storage(url=url,label=2,headers=headers)
 
 #
-aa = MTKSpider()
-bb = GetImgAddress.DriveEngine(aa)
-bb.run()
+# aa = MTKSpider()
+# bb = GetImgAddress.DriveEngine(aa)
+# bb.run()
