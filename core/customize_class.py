@@ -112,7 +112,7 @@ class TPSpider(GetImgAddress.BaseSpider):
 class MTSSpider(GetImgAddress.BaseSpider):
     name  = "美图录_性感"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/xinggan/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/xinggan/\d+.html'  #分页正则
@@ -141,7 +141,7 @@ class MTSSpider(GetImgAddress.BaseSpider):
 class MTKSpider(GetImgAddress.BaseSpider):
     name  = "美图录_可爱"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/keai/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/keai/\d+.html'  #分页正则
@@ -167,7 +167,7 @@ class MTKSpider(GetImgAddress.BaseSpider):
             headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
                 print("下载",url)
-                # tp_id = self.storage(url=url,label=1,headers=headers)
+                tp_id = self.storage(url=url,label=1,headers=headers)
 class MTQSpider(GetImgAddress.BaseSpider):
     name  = "美图录_清纯"
     model = 'static_get'

@@ -68,7 +68,9 @@ class BaseSpider(object):
         self.mongo_obj = self.conne_mongo()
         print("mongo")
         table_obj = self.mongo_obj['tp_image']
-        down = requests.get(url,headers=headers,allow_redirects=False).content
+        down = requests.get(url,headers=headers,allow_redirects=False)
+        print(down)
+        down =down.content
         md5_str = self.md5_encryption(down)
         img_path = Setting.SAVE_PATH + md5_str + '.jpg'
         if not table_obj.find_one({'md5':md5_str}): #去重
