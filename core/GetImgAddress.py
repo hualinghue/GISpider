@@ -9,10 +9,6 @@ from PIL import Image
 import pymongo
 import hashlib
 
-
-#! ? , . : ; ” ‘ ` * + - = / \ | _ $ @ # % & ^ ~ {}[]()<>< >
-#1 2 3 4 5 6 7 8 9 10
-
 class DriveEngine(object):
     def __init__(self,spider_obj):
         self.headers = Setting.HEADERS
@@ -25,6 +21,7 @@ class DriveEngine(object):
             self.abyss(url)
     def abyss(self,url):
         "重复获取下一页url和html源码进行处理"
+        print(url)
         self.old_url.add(url)  #已执行的url
         response_obj = self.func(url)   #获取源码
         response_obj.url = url
@@ -45,7 +42,8 @@ class DriveEngine(object):
         return re_set
     def static_get_model(self,url):
         'get获取页面html源码'
-        response = requests.get(url=url, headers=self.headers)
+        response = requests.get(url=url, headers=self.headers,allow_redirects=False)
+        print(response)
         # response.encoding = 'utf-8'   #中文乱码
         return response
     def json_get_model(self, url):
@@ -69,7 +67,9 @@ class BaseSpider(object):
         '下载并保存与本地和mongo'
         self.mongo_obj = self.conne_mongo()
         table_obj = self.mongo_obj['tp_image']
-        down = requests.get(url,headers=headers).content
+        down = requests.get(url,headers=headers,allow_redirects=False)
+        print(down)
+        down = down.content
         md5_str = self.md5_encryption(down)
         img_path = Setting.SAVE_PATH + md5_str + '.jpg'
         if not table_obj.find_one({'md5':md5_str}): #去重

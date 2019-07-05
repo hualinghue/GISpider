@@ -73,7 +73,7 @@ class QibaSpider(GetImgAddress.BaseSpider):
         self.start_urls = []
         self.link = r''  #分页正则
         self.init_url()
-    display = False
+        self.display = False
     def init_url(self,):
         # 批量生成请求连接
         for i in range(1,9):
@@ -117,7 +117,6 @@ class MTSSpider(GetImgAddress.BaseSpider):
     exclude_urls = []
     link = r'https://www.meitulu.com/t/xinggan/\d+.html'  #分页正则
     def parse_item(self, response):    #解析数据函数
-        print(response.url)
         tree = etree.HTML(response.text)
         a_list = tree.xpath("//ul[@class='img']/li")
         for a in a_list:
@@ -137,6 +136,7 @@ class MTSSpider(GetImgAddress.BaseSpider):
             headers = Setting.HEADERS
             headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
+                print('vvvv',url) #aaaa
                 tp_id = self.storage(url=url,label=3,headers=headers)
 class MTKSpider(GetImgAddress.BaseSpider):
     name  = "美图录_可爱"
