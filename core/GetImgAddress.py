@@ -67,9 +67,7 @@ class BaseSpider(object):
         '下载并保存与本地和mongo'
         self.mongo_obj = self.conne_mongo()
         table_obj = self.mongo_obj['tp_image']
-        down = requests.get(url,headers=headers,allow_redirects=False)
-        print(down)
-        down = down.content
+        down = requests.get(url,headers=headers,allow_redirects=False).content
         md5_str = self.md5_encryption(down)
         img_path = Setting.SAVE_PATH + md5_str + '.jpg'
         if not table_obj.find_one({'md5':md5_str}): #去重
@@ -83,6 +81,7 @@ class BaseSpider(object):
             }
             print(url, '下载完成')
             return self.deposit_mongo(data)  #存入mongo
+        return None
     def text_analysis(self,text):
         try:  # 处理中文乱码
             text = text.encode('iso-8859-1').decode('gbk')
