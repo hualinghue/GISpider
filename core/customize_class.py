@@ -138,7 +138,6 @@ class MTSSpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 print('vvvv',url) #aaaa
                 tp_id = self.storage(url=url,label=3,headers=headers)
-                print(tp_id)
 class MTKSpider(GetImgAddress.BaseSpider):
     name  = "美图录_可爱"
     model = 'static_get'

@@ -66,6 +66,7 @@ class BaseSpider(object):
     def storage(self,url,label,headers=None):
         '下载并保存与本地和mongo'
         self.mongo_obj = self.conne_mongo()
+        print("mongo")
         table_obj = self.mongo_obj['tp_image']
         down = requests.get(url,headers=headers,allow_redirects=False).content
         md5_str = self.md5_encryption(down)
