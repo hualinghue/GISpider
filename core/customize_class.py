@@ -208,7 +208,7 @@ class MTLLpider(GetImgAddress.BaseSpider):
     def parse_item(self, response):    #解析数据函数
         print(response.url)
         tree = etree.HTML(response.text)
-        a_list = tree.xpath("//div[@class='boxs']/ul/li/")
+        a_list = tree.xpath("//div[@class='boxs']/ul/li")
         for a in a_list:
             url = a.xpath('./a/@href')[0]
             next_obj =self.NextBianSpider([urljoin(response.url,url)],self.name)
