@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="378cb38e-9382-4981-9812-d21afba1035c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/customize_class.py" afterPath="$PROJECT_DIR$/core/customize_class.py" />
+      <change beforePath="$PROJECT_DIR$/core/GetImgAddress.py" afterPath="$PROJECT_DIR$/core/GetImgAddress.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetImgAddress.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GetImgAddress.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+            <state relative-caret-position="475">
+              <caret line="74" column="53" lean-forward="false" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -45,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customize_class.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customize_class.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/customize_class.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="295">
@@ -97,8 +97,8 @@
         <option value="$PROJECT_DIR$/bin/spider_climb.py" />
         <option value="$PROJECT_DIR$/conf/Setting.py" />
         <option value="$PROJECT_DIR$/core/text.py" />
-        <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
         <option value="$PROJECT_DIR$/core/customize_class.py" />
+        <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
       </list>
     </option>
   </component>
@@ -454,16 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/customize_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -476,6 +466,16 @@
             <element signature="e#4421#5666#0" expanded="false" />
             <element signature="e#5714#6973#0" expanded="false" />
             <element signature="e#7021#8256#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="74" column="53" lean-forward="false" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

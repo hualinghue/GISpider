@@ -4,7 +4,7 @@ import random
 from selenium import webdriver
 from conf import Setting
 from selenium.webdriver.chrome.options import Options
-import os,requests
+import requests
 from PIL import Image
 import pymongo
 import hashlib
@@ -68,7 +68,11 @@ class BaseSpider(object):
         self.mongo_obj = self.conne_mongo()
         print("mongo")
         table_obj = self.mongo_obj['tp_image']
-        down = requests.get(url,headers=headers)
+        try:
+            down = requests.get(url,headers=headers)
+        except Exception as e:
+            print(url)
+            down = requests.get(url, headers=headers)
         print(down)
         down =down.content
         md5_str = self.md5_encryption(down)
