@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="378cb38e-9382-4981-9812-d21afba1035c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/core/customize_class.py" afterPath="$PROJECT_DIR$/core/customize_class.py" />
+      <change beforePath="$PROJECT_DIR$/core/GetImgAddress.py" afterPath="$PROJECT_DIR$/core/GetImgAddress.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetImgAddress.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GetImgAddress.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2196">
-              <caret line="70" column="70" lean-forward="false" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
+            <state relative-caret-position="288">
+              <caret line="71" column="19" lean-forward="true" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -46,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customize_class.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customize_class.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/customize_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="216">
               <caret line="202" column="24" lean-forward="true" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
               <folding>
                 <element signature="e#287#1312#0" expanded="false" />
@@ -98,8 +97,8 @@
         <option value="$PROJECT_DIR$/bin/spider_climb.py" />
         <option value="$PROJECT_DIR$/conf/Setting.py" />
         <option value="$PROJECT_DIR$/core/text.py" />
-        <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
         <option value="$PROJECT_DIR$/core/customize_class.py" />
+        <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
       </list>
     </option>
   </component>
@@ -109,7 +108,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -311,7 +310,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -443,16 +442,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-41">
           <caret line="995" column="13" lean-forward="false" selection-start-line="995" selection-start-column="8" selection-end-line="995" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2196">
-          <caret line="70" column="70" lean-forward="false" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -466,7 +456,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/customize_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="216">
           <caret line="202" column="24" lean-forward="true" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
           <folding>
             <element signature="e#287#1312#0" expanded="false" />
@@ -476,6 +466,16 @@
             <element signature="e#4421#5666#0" expanded="false" />
             <element signature="e#5714#6973#0" expanded="false" />
             <element signature="e#7021#8256#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="71" column="19" lean-forward="true" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

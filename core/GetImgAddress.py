@@ -68,7 +68,7 @@ class BaseSpider(object):
         self.mongo_obj = self.conne_mongo()
         print("mongo")
         table_obj = self.mongo_obj['tp_image']
-        down = requests.get(url,headers=headers,allow_redirects=False)
+        down = requests.get(url,headers=headers)
         print(down)
         down =down.content
         md5_str = self.md5_encryption(down)
