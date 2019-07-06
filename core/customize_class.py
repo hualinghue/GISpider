@@ -138,10 +138,10 @@ class MTSSpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 print('vvvv',url) #aaaa
                 tp_id = self.storage(url=url,label=3,headers=headers)
-class MTKSpider(GetImgAddress.BaseSpider):
+class MTKApider(GetImgAddress.BaseSpider):
     name  = "美图录_可爱"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/keai/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/keai/\d+.html'  #分页正则
@@ -197,6 +197,36 @@ class MTQSpider(GetImgAddress.BaseSpider):
             headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
                 tp_id = self.storage(url=url,label=2,headers=headers)
+
+class MTLLpider(GetImgAddress.BaseSpider):
+    name  = "美图录_萝莉"
+    model = 'static_get'
+    display = True
+    start_urls = ['https://www.meitulu.com/t/loli/']
+    exclude_urls = []
+    link = r'https://www.meitulu.com/t/loli/\d+.html'  #分页正则
+    def parse_item(self, response):    #解析数据函数
+        print(response.url)
+        tree = etree.HTML(response.text)
+        a_list = tree.xpath("//div[@class='boxs']/ul/li/")
+        for a in a_list:
+            url = a.xpath('./a/@href')[0]
+            next_obj =self.NextBianSpider([urljoin(response.url,url)],self.name)
+            GetImgAddress.DriveEngine(next_obj).run()
+    class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
+        def __init__(self,url,name):
+            self.name = name
+            self.model = 'static_get'
+            self.start_urls = url
+            self.exclude_urls = []
+            self.link = r'/item/\d+_\d+.html'  # 分页正则
+        def parse_item(self, response):
+            tree = etree.HTML(response.text)
+            url_list = tree.xpath('//div[@class="content"]/center/img/@src')
+            headers = Setting.HEADERS
+            headers['Referer'] = 'https://www.meitulu.com/img.html'
+            for url in url_list:
+                tp_id = self.storage(url=url,label=5,headers=headers)
 
 #
 # aa = MTKSpider()
