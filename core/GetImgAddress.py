@@ -75,6 +75,7 @@ class BaseSpider(object):
             down = requests.get(url, headers=headers)
         print(down)
         if down.status_code ==200:
+            down = down.content
             md5_str = self.md5_encryption(down)
             img_path = Setting.SAVE_PATH + md5_str + '.jpg'
             if not table_obj.find_one({'md5':md5_str}): #去重
