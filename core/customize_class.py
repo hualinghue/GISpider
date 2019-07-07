@@ -230,7 +230,7 @@ class MTLLpider(GetImgAddress.BaseSpider):
 class MTBLpider(GetImgAddress.BaseSpider):
     name  = "美图录_爆乳"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/baoru/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/baoru/\d+.html'  #分页正则
@@ -255,7 +255,7 @@ class MTBLpider(GetImgAddress.BaseSpider):
             headers = Setting.HEADERS
             headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
-                tp_id = self.storage(url=url,label=5,headers=headers)
+                tp_id = self.storage(url=url,label=7,headers=headers)
 class MTNSpider(GetImgAddress.BaseSpider):
     name  = "美图录_女神"
     model = 'static_get'

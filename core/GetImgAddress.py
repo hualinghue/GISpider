@@ -74,20 +74,20 @@ class BaseSpider(object):
             print(url)
             down = requests.get(url, headers=headers)
         print(down)
-        down =down.content
-        md5_str = self.md5_encryption(down)
-        img_path = Setting.SAVE_PATH + md5_str + '.jpg'
-        if not table_obj.find_one({'md5':md5_str}): #去重
-            self.deposit_loclo(path=img_path,data=down)  #存入本地
-            data = {
-                'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                'type' : label,
-                'status':1,
-                'md5':md5_str,
-                'size':Image.open(img_path).size   #图片尺寸
-            }
-            print(url, '下载完成')
-            return self.deposit_mongo(data)  #存入mongo
+        if down.status_code ==200:
+            md5_str = self.md5_encryption(down)
+            img_path = Setting.SAVE_PATH + md5_str + '.jpg'
+            if not table_obj.find_one({'md5':md5_str}): #去重
+                self.deposit_loclo(path=img_path,data=down)  #存入本地
+                data = {
+                    'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+                    'type' : label,
+                    'status':1,
+                    'md5':md5_str,
+                    'size':Image.open(img_path).size   #图片尺寸
+                }
+                print(url, '下载完成')
+                return self.deposit_mongo(data)  #存入mongo
         return None
     def text_analysis(self,text):
         try:  # 处理中文乱码
