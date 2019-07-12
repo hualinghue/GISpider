@@ -18,6 +18,7 @@ class DriveEngine(object):
         self.redis = Redis(host='127.0.0.1',port='6379',decode_responses=True)
         self.page_old_url = self.spider_obj.name + 'page_old_url'
         self.page_url = self.spider_obj.name + 'page_url'
+        self.run()
     def run(self):
         for url in self.spider_obj.start_urls: #循环前台连接
             self.abyss(url)

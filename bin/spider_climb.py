@@ -12,7 +12,7 @@ if __name__ == "__main__":
         if inspect.isclass(obj) and name!='Options' and obj.display:     #筛选符合的对象
             print(1)
             bb = GetImgAddress.DriveEngine(obj())
-            pool.apply_async(bb.run())
+            pool.apply_async(bb)
     print('---staty---')
     pool.close()  # 关闭线程池，关闭后不再接受进的请求
     pool.join()#等待进程池所有进程都执行完毕后，开始执行下面语句
