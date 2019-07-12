@@ -198,9 +198,10 @@ class MTQSpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 tp_id = self.storage(url=url,label=2,headers=headers)
 class MTLLpider(GetImgAddress.BaseSpider):
-    name  = "美图录_萝莉"
+    "美图录_萝莉"
+    name  = ""
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/loli/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/loli/\d+.html'  #分页正则
@@ -255,9 +256,10 @@ class MTBLpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 tp_id = self.storage(url=url,label=7,headers=headers)
 class MTNSpider(GetImgAddress.BaseSpider):
-    name  = "美图录_女神"
+    "美图录_女神"
+    name  = "NS"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/nvshen/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/nvshen/\d+.html'  #分页正则
@@ -284,9 +286,10 @@ class MTNSpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 tp_id = self.storage(url=url,label=4,headers=headers)
 class MTQTpider(GetImgAddress.BaseSpider):
-    name  = "美图录_翘臀"
+    "美图录_翘臀"
+    name  = "QT"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/youhuo/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/youhuo/\d+.html'  #分页正则
