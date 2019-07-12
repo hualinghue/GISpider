@@ -7,7 +7,6 @@ from lxml import etree
 from core import GetImgAddress
 from urllib.parse import urljoin
 from conf import Setting
-import json
 
 class WeiYiSpider(GetImgAddress.BaseSpider):
     name  = "唯一桌面"
@@ -64,24 +63,6 @@ class BianSpider(GetImgAddress.BaseSpider):
                 print(url,self.start_urls)
                 raise ValueError
             img_size = self.storage(url=url[0],label=5)
-class QibaSpider(GetImgAddress.BaseSpider):
-    # json获取数据
-    def __init__(self):
-        self.name  = "87g"
-        self.model = 'json_get'
-        self.exclude_urls = []
-        self.start_urls = []
-        self.link = r''  #分页正则
-        self.init_url()
-        self.display = False
-    def init_url(self,):
-        # 批量生成请求连接
-        for i in range(1,9):
-            self.start_urls.append('http://www.87g.com/index.php?m=content&c=content_ajax&a=picture_page&siteid=1&catid=34&page=%d&_=1560741069911'%i)
-    def parse_item(self, response):    #解析数据函数
-        response_text = response.text.encode('utf8')[3:].decode('utf8')
-        json_dic = json.loads(response_text)
-        print(json_dic)
 class TPSpider(GetImgAddress.BaseSpider):
     name  = "7160图片大全"
     model = 'static_get'
