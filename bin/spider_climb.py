@@ -8,7 +8,7 @@ from core import GetImgAddress,customize_class
 import inspect
 
 if __name__ == "__main__":
-    pool = Pool(8)
+    pool = Pool(4)
     for name, obj in inspect.getmembers(customize_class):  #遍历所有自定义采集信息对象
         if inspect.isclass(obj) and name!='Options' and obj.display:     #筛选符合的对象
             print(1)

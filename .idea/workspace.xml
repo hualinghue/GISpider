@@ -28,8 +28,8 @@
       <file leaf-file-name="spider_climb.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/spider_climb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="583">
+              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -40,8 +40,8 @@
       <file leaf-file-name="GetImgAddress.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="396">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,8 +98,8 @@
         <option value="$PROJECT_DIR$/conf/Setting.py" />
         <option value="$PROJECT_DIR$/core/text.py" />
         <option value="$PROJECT_DIR$/core/customize_class.py" />
-        <option value="$PROJECT_DIR$/bin/spider_climb.py" />
         <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
+        <option value="$PROJECT_DIR$/bin/spider_climb.py" />
       </list>
     </option>
   </component>
@@ -614,16 +614,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="396">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/spider_climb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="583">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

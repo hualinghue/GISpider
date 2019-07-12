@@ -19,7 +19,6 @@ class DriveEngine(object):
         self.page_old_url = self.spider_obj.name + 'page_old_url'
         self.page_url = self.spider_obj.name + 'page_url'
     def run(self):
-        print('asd')
         for url in self.spider_obj.start_urls: #循环前台连接
             self.abyss(url)
     def abyss(self,url):
