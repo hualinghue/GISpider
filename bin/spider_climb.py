@@ -13,6 +13,7 @@ if __name__ == "__main__":
         if inspect.isclass(obj) and name!='Options' and obj.display:     #筛选符合的对象
             print(1)
             bb = GetImgAddress.DriveEngine(obj())
+            print(bb.run)
             pool.apply_async(bb.run)
     print('---start---')
     pool.close()  # 关闭线程池，关闭后不再接受进的请求
