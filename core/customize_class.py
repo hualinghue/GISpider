@@ -197,7 +197,6 @@ class MTQSpider(GetImgAddress.BaseSpider):
             headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
                 tp_id = self.storage(url=url,label=2,headers=headers)
-
 class MTLLpider(GetImgAddress.BaseSpider):
     name  = "美图录_萝莉"
     model = 'static_get'
@@ -228,11 +227,11 @@ class MTLLpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 tp_id = self.storage(url=url,label=5,headers=headers)
 class MTBLpider(GetImgAddress.BaseSpider):
-    name  = "美图录_爆乳"
+    "美图录_爆乳"
+    name  = 'BL'
     model = 'static_get'
     display = True
     start_urls = ['https://www.meitulu.com/t/baoru/']
-    exclude_urls = []
     link = r'https://www.meitulu.com/t/baoru/\d+.html'  #分页正则
     def parse_item(self, response):    #解析数据函数
         print(response.url)
@@ -244,10 +243,9 @@ class MTBLpider(GetImgAddress.BaseSpider):
             GetImgAddress.DriveEngine(next_obj).run()
     class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
         def __init__(self,url,name):
-            self.name = name
+            self.name = name+"_"
             self.model = 'static_get'
             self.start_urls = url
-            self.exclude_urls = []
             self.link = r'/item/\d+_\d+.html'  # 分页正则
         def parse_item(self, response):
             tree = etree.HTML(response.text)
@@ -259,7 +257,7 @@ class MTBLpider(GetImgAddress.BaseSpider):
 class MTNSpider(GetImgAddress.BaseSpider):
     name  = "美图录_女神"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/nvshen/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/nvshen/\d+.html'  #分页正则
@@ -288,7 +286,7 @@ class MTNSpider(GetImgAddress.BaseSpider):
 class MTQTpider(GetImgAddress.BaseSpider):
     name  = "美图录_翘臀"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/youhuo/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/youhuo/\d+.html'  #分页正则
@@ -315,7 +313,7 @@ class MTQTpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 tp_id = self.storage(url=url,label=8,headers=headers)
 
-#
-# aa = MTKSpider()
+
+# aa = MTBLpider()
 # bb = GetImgAddress.DriveEngine(aa)
 # bb.run()

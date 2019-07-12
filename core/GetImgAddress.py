@@ -1,4 +1,5 @@
 from urllib.parse import urljoin
+from redis import Redis
 import re,time
 import random
 from selenium import webdriver
@@ -14,41 +15,40 @@ class DriveEngine(object):
         self.headers = Setting.HEADERS
         self.spider_obj = spider_obj
         self.func = getattr(self,self.spider_obj.model+'_model')
-        self.url_list = set()
-        self.old_url = set(spider_obj.exclude_urls)
+        self.redis = Redis(host='127.0.0.1',port='6379',decode_responses=True)
+        self.page_old_url = self.spider_obj.name + 'page_old_url'
+        self.page_url = self.spider_obj.name + 'page_url'
     def run(self):
         for url in self.spider_obj.start_urls: #循环前台连接
             self.abyss(url)
     def abyss(self,url):
         "重复获取下一页url和html源码进行处理"
         print(url)
-        self.old_url.add(url)  #已执行的url
+        self.redis.sadd(self.page_old_url,url)  #已执行的url
         response_obj = self.func(url)   #获取源码
-        response_obj.url = url
         self.spider_obj.parse_item(response_obj)     #调用解析函数
         self.get_page_url(response_obj.text,url)     #调用url提取器
         #判断url集合中是否还有未执行的url
-        if self.url_list - self.old_url:
-            self.abyss(random.sample(self.url_list - self.old_url, 1)[0])  # 在集合中随机取一个url返回
+        next_url_set = self.redis.sdiff(self.page_url,self.page_old_url)
+        if next_url_set:
+            next_url = random.sample(next_url_set, 1)[0]
+            self.redis.srem(self.page_old_url, next_url)
+            self.abyss(next_url)  # 在集合中随机取一个url返回
+
     def get_page_url(self,response_text,url):
         "获取页面url"
         if self.spider_obj.link:
-            response_url_set = self.url_extract(response_text, url)    #获取页面的url
-            self.url_list = self.url_list | response_url_set      #合并到url集合
-    def url_extract(self,response_text,url):
-        "提取页面中的指定规则url"
-        re_list = re.findall(self.spider_obj.link,response_text,re.S)
-        re_set ={urljoin(url,re_url) for re_url in re_list}
-        return re_set
+            re_list = re.findall(self.spider_obj.link, response_text, re.S)  #获取页面的url
+            for re_url in re_list:
+                self.redis.sadd(self.page_url,urljoin(url, re_url) )    #添加到redis中
     def static_get_model(self,url):
         'get获取页面html源码'
         response = requests.get(url=url, headers=self.headers,allow_redirects=False)
-        print(response)
         # response.encoding = 'utf-8'   #中文乱码
         return response
     def json_get_model(self, url):
         return self.static_get_model(url)
-    def dynamic_get_model(self,url):
+    def selenium_get_model(self,url):
         '使用selenium模块获取动态html源码'
         #设置无头浏览器
         chrome_options = Options()
@@ -59,8 +59,6 @@ class DriveEngine(object):
         time.sleep(1)
         bro.execute_script('window.scrollTo(0,document.body.scrollHeight)')   #执行js代码
         return bro.page_source
-    def dynamic_post_model(self,url):
-        pass
 
 class BaseSpider(object):
     def storage(self,url,label,headers=None):
@@ -97,6 +95,7 @@ class BaseSpider(object):
             pass
         return text
     def conne_mongo(self):
+        '''连接mongo'''
         client = pymongo.MongoClient(host=Setting.DB_HOST, port=27017)
         db = client[Setting.DB_NAME]
         try:
@@ -105,13 +104,16 @@ class BaseSpider(object):
         except Exception as e:
             print('连接mongo失败', e)
     def md5_encryption(self,down):
+        '''md5加密'''
         hl = hashlib.md5()
         hl.update(down)
         return hl.hexdigest()
     def deposit_mongo(self,data):
-        table_obj =  self.mongo_obj['tp_image']
+        '''存入mongo'''
+        table_obj =  self.mongo_obj[Setting.TABLE_NAME]
         return table_obj.insert(data)
     def deposit_loclo(self,path,data):
+        '''存入本地'''
         with open(path, 'wb') as fp:
             fp.write(data)
 
