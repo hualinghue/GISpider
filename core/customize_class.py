@@ -64,7 +64,7 @@ class BianSpider(GetImgAddress.BaseSpider):
                 raise ValueError
             img_size = self.storage(url=url[0],label=5)
 class TPSpider(GetImgAddress.BaseSpider):
-    name  = "7160图片大全"
+    name  = "TP"
     model = 'static_get'
     display = True
     start_urls = ['https://www.7160.com/xiaohua/']
@@ -91,7 +91,7 @@ class TPSpider(GetImgAddress.BaseSpider):
             url = tree.xpath('//div[@class="picsbox picsboxcenter"]//img/@src')[0]
             tp_id = self.storage(url=url,label=6)
 class MTSSpider(GetImgAddress.BaseSpider):
-    name  = "美图录_性感"
+    name  = "XG"
     model = 'static_get'
     display = True
     start_urls = ['https://www.meitulu.com/t/xinggan/']
@@ -119,7 +119,7 @@ class MTSSpider(GetImgAddress.BaseSpider):
             for url in url_list:
                 tp_id = self.storage(url=url,label=3,headers=headers)
 class MTKApider(GetImgAddress.BaseSpider):
-    name  = "美图录_可爱"
+    name  = "KA"
     model = 'static_get'
     display = True
     start_urls = ['https://www.meitulu.com/t/keai/']
@@ -149,7 +149,7 @@ class MTKApider(GetImgAddress.BaseSpider):
                 print("下载",url)
                 tp_id = self.storage(url=url,label=1,headers=headers)
 class MTQSpider(GetImgAddress.BaseSpider):
-    name  = "美图录_清纯"
+    name  = "QC"
     model = 'static_get'
     display = True
     start_urls = ['https://www.meitulu.com/t/qingchun/']
