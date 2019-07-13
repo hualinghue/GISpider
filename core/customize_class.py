@@ -81,7 +81,7 @@ class TPSpider(GetImgAddress.BaseSpider):
             GetImgAddress.DriveEngine(next_obj).run()
     class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
         def __init__(self,url,name):
-            self.name = name
+            self.name = name+"_"
             self.model = 'static_get'
             self.start_urls = url
             self.exclude_urls = []
@@ -106,7 +106,7 @@ class MTSSpider(GetImgAddress.BaseSpider):
             GetImgAddress.DriveEngine(next_obj).run()
     class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
         def __init__(self,url,name):
-            self.name = name
+            self.name = name+"_"
             self.model = 'static_get'
             self.start_urls = url
             self.exclude_urls = []
@@ -135,7 +135,7 @@ class MTKApider(GetImgAddress.BaseSpider):
             GetImgAddress.DriveEngine(next_obj).run()
     class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
         def __init__(self,url,name):
-            self.name = name
+            self.name = name+"_"
             self.model = 'static_get'
             self.start_urls = url
             self.exclude_urls = []
@@ -165,7 +165,7 @@ class MTQSpider(GetImgAddress.BaseSpider):
             GetImgAddress.DriveEngine(next_obj).run()
     class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
         def __init__(self,url,name):
-            self.name = name
+            self.name = name+"_"
             self.model = 'static_get'
             self.start_urls = url
             self.exclude_urls = []
@@ -179,7 +179,7 @@ class MTQSpider(GetImgAddress.BaseSpider):
                 tp_id = self.storage(url=url,label=2,headers=headers)
 class MTLLpider(GetImgAddress.BaseSpider):
     "美图录_萝莉"
-    name  = ""
+    name  = "LL"
     model = 'static_get'
     display = False
     start_urls = ['https://www.meitulu.com/t/loli/']
@@ -195,7 +195,7 @@ class MTLLpider(GetImgAddress.BaseSpider):
             GetImgAddress.DriveEngine(next_obj).run()
     class NextBianSpider(GetImgAddress.BaseSpider):   #处理详情页
         def __init__(self,url,name):
-            self.name = name
+            self.name = name+"_"
             self.model = 'static_get'
             self.start_urls = url
             self.exclude_urls = []
