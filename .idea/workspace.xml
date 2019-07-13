@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="378cb38e-9382-4981-9812-d21afba1035c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/core/GetImgAddress.py" afterPath="$PROJECT_DIR$/core/GetImgAddress.py" />
       <change beforePath="$PROJECT_DIR$/core/customize_class.py" afterPath="$PROJECT_DIR$/core/customize_class.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,28 +37,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetImgAddress.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GetImgAddress.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state relative-caret-position="648">
+              <caret line="34" column="56" lean-forward="true" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customize_class.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customize_class.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/customize_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+            <state relative-caret-position="79">
+              <caret line="105" column="53" lean-forward="true" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="53" />
               <folding>
                 <element signature="e#275#1300#0" expanded="false" />
                 <element signature="e#1349#2471#0" expanded="false" />
-                <element signature="e#7548#8793#0" expanded="false" />
-                <element signature="e#8841#10031#0" expanded="false" />
-                <element signature="e#10079#11324#0" expanded="false" />
-                <element signature="e#11372#12617#0" expanded="false" />
+                <element signature="e#2518#3661#0" expanded="false" />
+                <element signature="e#7549#8794#0" expanded="false" />
+                <element signature="e#8842#10032#0" expanded="false" />
+                <element signature="e#10080#11325#0" expanded="false" />
+                <element signature="e#11373#12618#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,8 +101,8 @@
         <option value="$PROJECT_DIR$/conf/Setting.py" />
         <option value="$PROJECT_DIR$/core/text.py" />
         <option value="$PROJECT_DIR$/bin/spider_climb.py" />
-        <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
         <option value="$PROJECT_DIR$/core/customize_class.py" />
+        <option value="$PROJECT_DIR$/core/GetImgAddress.py" />
       </list>
     </option>
   </component>
@@ -407,10 +409,11 @@
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -432,10 +435,11 @@
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -473,10 +477,11 @@
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -498,10 +503,11 @@
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -531,10 +537,11 @@
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -564,10 +571,11 @@
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -597,10 +605,11 @@
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -656,26 +665,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/customize_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+        <state relative-caret-position="79">
+          <caret line="105" column="53" lean-forward="true" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="53" />
           <folding>
             <element signature="e#275#1300#0" expanded="false" />
             <element signature="e#1349#2471#0" expanded="false" />
-            <element signature="e#7548#8793#0" expanded="false" />
-            <element signature="e#8841#10031#0" expanded="false" />
-            <element signature="e#10079#11324#0" expanded="false" />
-            <element signature="e#11372#12617#0" expanded="false" />
+            <element signature="e#2518#3661#0" expanded="false" />
+            <element signature="e#7549#8794#0" expanded="false" />
+            <element signature="e#8842#10032#0" expanded="false" />
+            <element signature="e#10080#11325#0" expanded="false" />
+            <element signature="e#11373#12618#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/GetImgAddress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="34" column="56" lean-forward="true" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>

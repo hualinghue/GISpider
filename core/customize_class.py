@@ -66,7 +66,7 @@ class BianSpider(GetImgAddress.BaseSpider):
 class TPSpider(GetImgAddress.BaseSpider):
     name  = "TP"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.7160.com/xiaohua/']
     exclude_urls = []
     link = r'list_6_\d+.html'  #分页正则
