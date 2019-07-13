@@ -66,7 +66,7 @@ class BianSpider(GetImgAddress.BaseSpider):
 class TPSpider(GetImgAddress.BaseSpider):
     name  = "7160图片大全"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.7160.com/xiaohua/']
     exclude_urls = []
     link = r'list_6_\d+.html'  #分页正则
@@ -93,7 +93,7 @@ class TPSpider(GetImgAddress.BaseSpider):
 class MTSSpider(GetImgAddress.BaseSpider):
     name  = "美图录_性感"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/xinggan/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/xinggan/\d+.html'  #分页正则
@@ -117,12 +117,11 @@ class MTSSpider(GetImgAddress.BaseSpider):
             headers = Setting.HEADERS
             headers['Referer'] = 'https://www.meitulu.com/img.html'
             for url in url_list:
-                print('vvvv',url) #aaaa
                 tp_id = self.storage(url=url,label=3,headers=headers)
 class MTKApider(GetImgAddress.BaseSpider):
     name  = "美图录_可爱"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/keai/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/keai/\d+.html'  #分页正则
@@ -152,7 +151,7 @@ class MTKApider(GetImgAddress.BaseSpider):
 class MTQSpider(GetImgAddress.BaseSpider):
     name  = "美图录_清纯"
     model = 'static_get'
-    display = False
+    display = True
     start_urls = ['https://www.meitulu.com/t/qingchun/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/qingchun/\d+.html'  #分页正则
@@ -182,7 +181,7 @@ class MTLLpider(GetImgAddress.BaseSpider):
     "美图录_萝莉"
     name  = ""
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/loli/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/loli/\d+.html'  #分页正则
@@ -212,7 +211,7 @@ class MTBLpider(GetImgAddress.BaseSpider):
     "美图录_爆乳"
     name  = 'BL'
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/baoru/']
     link = r'https://www.meitulu.com/t/baoru/\d+.html'  #分页正则
     def parse_item(self, response):    #解析数据函数
@@ -240,7 +239,7 @@ class MTNSpider(GetImgAddress.BaseSpider):
     "美图录_女神"
     name  = "NS"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/nvshen/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/nvshen/\d+.html'  #分页正则
@@ -270,7 +269,7 @@ class MTQTpider(GetImgAddress.BaseSpider):
     "美图录_翘臀"
     name  = "QT"
     model = 'static_get'
-    display = True
+    display = False
     start_urls = ['https://www.meitulu.com/t/youhuo/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/youhuo/\d+.html'  #分页正则
