@@ -1,14 +1,12 @@
 from urllib.parse import urljoin
 from redis import Redis
-import re,time
 import random
 from selenium import webdriver
 from conf import Setting
 from selenium.webdriver.chrome.options import Options
-import requests
 from PIL import Image
-import pymongo
-import hashlib
+import pymongo,hashlib,requests,re,time
+from multiprocessing import Pool
 
 class DriveEngine(object):
     def __init__(self,spider_obj):
@@ -20,8 +18,11 @@ class DriveEngine(object):
         self.page_url = self.spider_obj.name + 'page_url'
         self.run()
     def run(self):
+        pool = Pool(8)
         for url in self.spider_obj.start_urls: #循环前台连接
-            self.abyss(url)
+            pool.apply_async(self.abyss(url))
+        pool.close()  # 关闭线程池，关闭后不再接受进的请求
+        pool.join()  # 等待进程池所有进程都执行完毕后，开始执行下面语句
     def abyss(self,url):
         "重复获取下一页url和html源码进行处理"
         print(url)
