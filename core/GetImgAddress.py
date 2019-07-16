@@ -1,14 +1,11 @@
 from urllib.parse import urljoin
 from redis import Redis
-import re,time
 import random
 from selenium import webdriver
 from conf import Setting
 from selenium.webdriver.chrome.options import Options
-import requests
 from PIL import Image
-import pymongo
-import hashlib
+import pymongo,hashlib,requests,re,time,threading
 
 class DriveEngine(object):
     def __init__(self,spider_obj):
@@ -16,12 +13,20 @@ class DriveEngine(object):
         self.spider_obj = spider_obj
         self.func = getattr(self,self.spider_obj.model+'_model')
         self.redis = Redis(host='127.0.0.1',port='6379',decode_responses=True)
-        self.page_old_url = self.spider_obj.name + 'page_old_url'
-        self.page_url = self.spider_obj.name + 'page_url'
         self.run()
     def run(self):
+        threading_list = []
+        #使用多线程
+        num = 1
         for url in self.spider_obj.start_urls: #循环前台连接
-            self.abyss(url)
+            self.page_old_url = self.spider_obj.name+ str(num) + 'page_old_url'    #设置redis的集合key名
+            self.page_url = self.spider_obj.name + str(num) + 'page_url'
+            threading_list.append(threading.Thread(target=self.abyss,args=(url,)))
+            num +=1
+        for threading_obj in threading_list:
+            threading_obj.start()
+        for threading_job in threading_list:
+            threading_job.join()
     def abyss(self,url):
         "重复获取下一页url和html源码进行处理"
         print(url)
@@ -32,10 +37,18 @@ class DriveEngine(object):
         #判断url集合中是否还有未执行的url
         set_nu = self.redis.sdiffstore(self.page_url,self.page_url,self.page_old_url)
         if set_nu:
+<<<<<<< HEAD
             # 在redis集合中随机取一个url返回
             next_url = random.sample(self.redis.smembers(self.page_url), 1)[0]
             self.redis.srem(self.page_old_url, next_url)
             self.abyss(next_url) 
+=======
+            next_url = random.sample(self.redis.smembers(self.page_url), 1)[0]
+            self.redis.srem(self.page_old_url, next_url)
+            self.abyss(next_url)  # 在集合中随机取一个url返回
+        else:
+            self.redis.delete(self.page_url)
+>>>>>>> 956e3a90f89964fe4a48ae6a78df301f2cfede8d
 
     def get_page_url(self,response_text,url):
         "获取页面url"
