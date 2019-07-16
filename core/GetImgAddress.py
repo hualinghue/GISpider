@@ -40,7 +40,7 @@ class DriveEngine(object):
             # 在redis集合中随机取一个url返回
             next_url = random.sample(self.redis.smembers(self.page_url), 1)[0]
             self.redis.srem(self.page_old_url, next_url)
-            self.abyss(next_url) 
+            self.abyss(next_url)
         else:
             self.redis.delete(self.page_url)
 

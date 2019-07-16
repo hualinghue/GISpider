@@ -270,7 +270,7 @@ class MTQTpider(GetImgAddress.BaseSpider):
     name  = "QT"
     model = 'static_get'
     display = True
-    start_urls = ['https://www.meitulu.com/t/youhuo/','https://www.meitulu.com/t/nvshen/']
+    start_urls = ['https://www.meitulu.com/t/youhuo/']
     exclude_urls = []
     link = r'https://www.meitulu.com/t/\w+/\d+.html'  #分页正则
     def parse_item(self, response):    #解析数据函数
