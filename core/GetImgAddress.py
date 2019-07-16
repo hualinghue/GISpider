@@ -37,18 +37,12 @@ class DriveEngine(object):
         #判断url集合中是否还有未执行的url
         set_nu = self.redis.sdiffstore(self.page_url,self.page_url,self.page_old_url)
         if set_nu:
-<<<<<<< HEAD
             # 在redis集合中随机取一个url返回
             next_url = random.sample(self.redis.smembers(self.page_url), 1)[0]
             self.redis.srem(self.page_old_url, next_url)
             self.abyss(next_url) 
-=======
-            next_url = random.sample(self.redis.smembers(self.page_url), 1)[0]
-            self.redis.srem(self.page_old_url, next_url)
-            self.abyss(next_url)  # 在集合中随机取一个url返回
         else:
             self.redis.delete(self.page_url)
->>>>>>> 956e3a90f89964fe4a48ae6a78df301f2cfede8d
 
     def get_page_url(self,response_text,url):
         "获取页面url"
