@@ -43,7 +43,6 @@ class DriveEngine(object):
             self.abyss(next_url)
         else:
             self.redis.delete(self.page_url)
-
     def get_page_url(self,response_text,url):
         "获取页面url"
         if self.spider_obj.link:
