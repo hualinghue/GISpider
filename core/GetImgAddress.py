@@ -6,7 +6,6 @@ from conf import Setting
 from selenium.webdriver.chrome.options import Options
 from PIL import Image
 import pymongo,hashlib,requests,re,time,threading
-from multiprocessing import Pool
 
 class DriveEngine(object):
     def __init__(self,spider_obj):
@@ -14,13 +13,16 @@ class DriveEngine(object):
         self.spider_obj = spider_obj
         self.func = getattr(self,self.spider_obj.model+'_model')
         self.redis = Redis(host='127.0.0.1',port='6379',decode_responses=True)
-        self.page_old_url = self.spider_obj.name + 'page_old_url'
-        self.page_url = self.spider_obj.name + 'page_url'
         self.run()
     def run(self):
         threading_list = []
+        #使用多线程
+        num = 1
         for url in self.spider_obj.start_urls: #循环前台连接
+            self.page_old_url = self.spider_obj.name+ str(num) + 'page_old_url'    #设置redis的集合key名
+            self.page_url = self.spider_obj.name + str(num) + 'page_url'
             threading_list.append(threading.Thread(target=self.abyss,args=(url,)))
+            num +=1
         for threading_obj in threading_list:
             threading_obj.start()
         for threading_job in threading_list:
@@ -33,7 +35,7 @@ class DriveEngine(object):
         self.spider_obj.parse_item(response_obj)     #调用解析函数
         self.get_page_url(response_obj.text,url)     #调用url提取器
         #判断url集合中是否还有未执行的url
-        next_url_set = self.redis.sdiff(self.page_url,self.page_old_url)
+        next_url_set = self.redis.sdiffstore(self.page_url,self.page_url,self.page_old_url)
         if next_url_set:
             next_url = random.sample(next_url_set, 1)[0]
             self.redis.srem(self.page_old_url, next_url)
