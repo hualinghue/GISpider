@@ -5,7 +5,7 @@ from selenium import webdriver
 from conf import Setting
 from selenium.webdriver.chrome.options import Options
 from PIL import Image
-import pymongo,hashlib,requests,re,time
+import pymongo,hashlib,requests,re,time,threading
 from multiprocessing import Pool
 
 class DriveEngine(object):
@@ -18,11 +18,13 @@ class DriveEngine(object):
         self.page_url = self.spider_obj.name + 'page_url'
         self.run()
     def run(self):
-        pool = Pool(8)
+        threading_list = []
         for url in self.spider_obj.start_urls: #循环前台连接
-            pool.apply_async(self.abyss(url))
-        pool.close()  # 关闭线程池，关闭后不再接受进的请求
-        pool.join()  # 等待进程池所有进程都执行完毕后，开始执行下面语句
+            threading_list.append(threading.Thread(target=url))
+        for threading_obj in threading_list:
+            threading_obj.start()
+        for threading_job in threading_list:
+            threading_job.join()
     def abyss(self,url):
         "重复获取下一页url和html源码进行处理"
         print(url)
