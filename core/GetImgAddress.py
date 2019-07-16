@@ -35,6 +35,8 @@ class DriveEngine(object):
             next_url = random.sample(next_url_set, 1)[0]
             self.redis.srem(self.page_old_url, next_url)
             self.abyss(next_url)  # 在集合中随机取一个url返回
+        else:
+            self.redis.delete(self.page_url)
 
     def get_page_url(self,response_text,url):
         "获取页面url"
