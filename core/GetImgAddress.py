@@ -30,11 +30,12 @@ class DriveEngine(object):
         self.spider_obj.parse_item(response_obj)     #调用解析函数
         self.get_page_url(response_obj.text,url)     #调用url提取器
         #判断url集合中是否还有未执行的url
-        next_url_set = self.redis.sdiff(self.page_url,self.page_old_url)
-        if next_url_set:
-            next_url = random.sample(next_url_set, 1)[0]
+        set_nu = self.redis.sdiffstore(self.page_url,self.page_url,self.page_old_url)
+        if set_nu:
+            # 在redis集合中随机取一个url返回
+            next_url = random.sample(self.redis.smembers(self.page_url), 1)[0]
             self.redis.srem(self.page_old_url, next_url)
-            self.abyss(next_url)  # 在集合中随机取一个url返回
+            self.abyss(next_url) 
 
     def get_page_url(self,response_text,url):
         "获取页面url"
