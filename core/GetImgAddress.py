@@ -20,7 +20,7 @@ class DriveEngine(object):
     def run(self):
         threading_list = []
         for url in self.spider_obj.start_urls: #循环前台连接
-            threading_list.append(threading.Thread(target=url))
+            threading_list.append(threading.Thread(target=self.abyss,args=(url,)))
         for threading_obj in threading_list:
             threading_obj.start()
         for threading_job in threading_list:
