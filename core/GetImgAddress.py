@@ -100,7 +100,7 @@ class BaseSpider(object):
                 }
                 print(url, '下载完成')
                 img_obj.thumbnail(img_ls_size,Image.ANTIALIAS)
-                img_obj.save(img_ls_path)
+                img_obj.save(img_ls_path+md5_str+'.jpg')
                 return self.deposit_mongo(data)  #存入mongo
         return None
     def text_analysis(self,text):
