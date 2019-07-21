@@ -83,17 +83,22 @@ class BaseSpider(object):
         if down.status_code ==200:
             down = down.content
             md5_str = self.md5_encryption(down)
-            img_path = Setting.SAVE_PATH + md5_str + '.jpg'
+            img_path = Setting.IMG_PATH + md5_str + '.jpg'
+            img_ls_path = Setting.IMG_LS_PATH + md5_str + '.jpg'
             if not table_obj.find_one({'md5':md5_str}): #去重
                 self.deposit_loclo(path=img_path,data=down)  #存入本地
+                img_obj = Image.open(img_path)
+                img_ls_size = (200,img_obj.size/(img_obj.size[0]/200))
                 data = {
                     'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
                     'type' : label,
                     'status':1,
                     'md5':md5_str,
-                    'size':Image.open(img_path).size   #图片尺寸
+                    'size':img_obj.size   #图片尺寸
                 }
                 print(url, '下载完成')
+                img_obj.thumbnail(img_ls_size,Image.ANTIALIAS)
+                img_obj.save(img_ls_path)
                 return self.deposit_mongo(data)  #存入mongo
         return None
     def text_analysis(self,text):
