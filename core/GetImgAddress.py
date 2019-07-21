@@ -21,12 +21,13 @@ class DriveEngine(object):
         for url in self.spider_obj.start_urls: #循环前台连接
             self.page_old_url = self.spider_obj.name+ str(num) + 'page_old_url'    #设置redis的集合key名
             self.page_url = self.spider_obj.name + str(num) + 'page_url'
-            threading_list.append(threading.Thread(target=self.abyss,args=(url,)))
-            num +=1
-        for threading_obj in threading_list:
-            threading_obj.start()
-        for threading_job in threading_list:
-            threading_job.join()
+            self.abyss(url)
+        #     threading_list.append(threading.Thread(target=self.abyss,args=(url,)))
+        #     num +=1
+        # for threading_obj in threading_list:
+        #     threading_obj.start()
+        # for threading_job in threading_list:
+        #     threading_job.join()
     def abyss(self,url):
         "重复获取下一页url和html源码进行处理"
         print(url)
