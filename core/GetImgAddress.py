@@ -89,7 +89,7 @@ class BaseSpider(object):
             if not table_obj.find_one({'md5':md5_str}): #去重
                 self.deposit_loclo(path=img_path,data=down)  #存入本地
                 img_obj = Image.open(img_path)
-                img_ls_size = (200,int(img_obj.size[1]/(img_obj.size[0]/200)))
+                img_ls_size = (200,int(img_obj.size[1]/(img_obj.size[0]/220)))
                 data = {
                     'ctime':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
                     'type' : label,
